@@ -21,7 +21,9 @@ This repository provides a simple setup to run the **DeepSeek-R1 model** locally
    - Pull and run the **DeepSeek-R1 model** using Ollama.
    - Launch **Open WebUI** for easy interaction.
 
-   **NOTE: Please note that it might take some time until services will be run if the Ollama and Open-WebUI Docker images are pulled and downloaded for the first time**
+   **NOTES: 
+      - Please note that it might take some time until services will be run if the Ollama and Open-WebUI Docker images are pulled and downloaded for the first time
+      - After running the services for first time, you might need to re-start the Ollama & Open WebUI by running ``docker compose down; docker compose up -d``**
 
 ## How to Open WebUI
 Once running, open your browser and go to:

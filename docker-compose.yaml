@@ -12,8 +12,12 @@ services:
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
-        ollama pull deepseek-r1:1.5b
-        ollama serve
+        ollama serve & sleep 2
+        if ! ollama list | grep -q "deepseek-r1:1.5b"; then
+          echo "Pulling deepseek-r1:1.5b model..."
+          ollama pull deepseek-r1:1.5b
+        fi
+        wait
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
@@ -34,4 +38,4 @@ volumes:
     external: true 
   openwebui_data:
     name: openwebui_data
-    external: true 
+    external: true
